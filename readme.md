@@ -1,4 +1,6 @@
-Asheville Air Quality and City Limits Map
+                        Asheville Air Quality and City Limits Map
+
+
 This project visualizes Asheville Air Quality (Ozone) and Asheville City Limits using Leaflet and GeoJSON data. The map displays points representing ozone levels across Asheville, NC, and overlays the city's boundaries. It includes a color-coded legend for ozone levels, a scale bar, and popups showing detailed information.
 
 Project Features

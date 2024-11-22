@@ -1,0 +1,136 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 1,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.00181195,
+          "st_acreage": 1.15965045,
+          "shape_Length": 908.27507473922,
+          "shape_Area": 50514.3735189753
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 3,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.00166406,
+          "st_acreage": 1.06499861,
+          "shape_Length": 1198.90948753479,
+          "shape_Area": 46391.3395964044
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 19,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 1.06371851,
+          "st_acreage": 680.77984461,
+          "shape_Length": 37616.1368607498,
+          "shape_Area": 29654770.0312102
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 20,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.03032212,
+          "st_acreage": 19.40615745,
+          "shape_Length": 4499.44374183957,
+          "shape_Area": 845332.218453863
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 21,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.00483058,
+          "st_acreage": 3.09157064,
+          "shape_Length": 1554.28620678523,
+          "shape_Area": 134668.816909972
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 22,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.00305659,
+          "st_acreage": 1.95621964,
+          "shape_Length": 1225.26092401523,
+          "shape_Area": 85212.9274211098
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 28,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.0006966,
+          "st_acreage": 0.4458213,
+          "shape_Length": 581.72616210862,
+          "shape_Area": 19419.9758982433
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 29,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.21252166,
+          "st_acreage": 136.01386364,
+          "shape_Length": 14938.8293588249,
+          "shape_Area": 5924763.90021642
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 32,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 0.26649392,
+          "st_acreage": 170.55610738,
+          "shape_Length": 14983.6854902838,
+          "shape_Area": 7429424.03766798
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 39,
+          "jurisdiction_type": "Asheville Corporate Limits",
+          "label": "ASHEVILLE",
+          "st_squaremiles": 44.16796207,
+          "st_acreage": 28267.49572793,
+          "shape_Length": 617825.351389181,
+          "shape_Area": 1231332113.90867
+        },
+        "geometry": null
+      }
+    ]
+  }
+  

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asheville Air Quality and City Limits</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.0/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <style>
+        html, body, #map { width: 100%; height: 100%; margin: 0; background: #fff; }
+        .legend {
+            line-height: 20px;
+            font-size: 14px;
+            width: 200px;
+            color: #333333;
+            padding: 6px 8px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        .legend i {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([35.5951, -82.5515], 12); // Centered on Asheville, NC
+
+        // Add OpenStreetMap basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Simplified hardcoded points (for testing)
+        const testGeoJSON = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-82.5515, 35.5951]
+                    },
+                    "properties": {
+                        "name": "Test Point 1",
+                        "ozone_level": 80
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-82.5510, 35.5960]
+                    },
+                    "properties": {
+                        "name": "Test Point 2",
+                        "ozone_level": 60
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-82.5520, 35.5955]
+                    },
+                    "properties": {
+                        "name": "Test Point 3",
+                        "ozone_level": 40
+                    }
+                }
+            ]
+        };
+
+        // Function to determine ozone color based on level
+        function getOzoneColor(value) {
+            return value > 100 ? "#d73027" :
+                   value > 75  ? "#fc8d59" :
+                   value > 50  ? "#fee08b" :
+                   value > 25  ? "#d9ef8b" :
+                                 "#91cf60";
+        }
+
+        // Adding the GeoJSON layer for points
+        L.geoJSON(testGeoJSON, {
+            style: function (feature) {
+                const ozone = feature.properties.ozone_level;
+                return {
+                    fillColor: getOzoneColor(ozone),
+                    color: "black",
+                    weight: 1,
+                    fillOpacity: 0.6
+                };
+            },
+            onEachFeature: function (feature, layer) {
+                const props = feature.properties;
+                layer.bindPopup(`<b>Name:</b> ${props.name || 'Unknown'}<br><b>Ozone Level:</b> ${props.ozone_level}`);
+            }
+        }).addTo(map);
+
+        // Add the legend
+        const legend = L.control({position: 'topright'});
+
+        legend.onAdd = function () {
+            const div = L.DomUtil.create('div', 'legend');
+            div.innerHTML += '<b>Ozone Levels</b><br>';
+            div.innerHTML += '<i style="background: #d73027"></i> > 100<br>';
+            div.innerHTML += '<i style="background: #fc8d59"></i> 76-100<br>';
+            div.innerHTML += '<i style="background: #fee08b"></i> 51-75<br>';
+            div.innerHTML += '<i style="background: #d9ef8b"></i> 26-50<br>';
+            div.innerHTML += '<i style="background: #91cf60"></i> 0-25<br>';
+            return div;
+        };
+
+        legend.addTo(map);
+
+        // Add scale bar
+        L.control.scale({position: 'bottomleft'}).addTo(map);
+
+    </script>
+</body>
+</html>
